@@ -45,10 +45,15 @@ class WPG_Post_types Extends WPG{
 	public function mb_references(){
 		global $post;
 
-		if( $reference = get_post_meta( $post->ID, 'tcbwpg_reference', $single=true ) ) :
-			if( empty($reference) ) $reference = array();
-			extract( shortcode_atts(array('title'=>'', 'link'=>''), $reference) );
-		endif;
+		if( $reference = get_post_meta( $post->ID, 'tcbwpg_reference', $single=true ) ) {
+			if (empty($reference)) {
+			    $reference = array();
+            }
+			extract(shortcode_atts(array('title'=>'', 'link'=>''), $reference));
+        } else {
+            $title = '';
+            $link = '';
+        }
 
 		echo '<label class="tcbwpg-admin">' . __('Title:','wp-glossary') . ' <input name="tcbwpg_reference_title" size="30" value="' . $title . '" /></label><br>';
 		echo '<label class="tcbwpg-admin">' . __('Link:','wp-glossary') . ' <input name="tcbwpg_reference_link" size="50" value="' . $link . '" /></label>';
