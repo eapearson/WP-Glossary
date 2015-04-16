@@ -19,7 +19,7 @@
 	margin: 0 0 0 0.5em;
 }
 
-.glossary-menu-item a{
+.glossary-menu-item a {
   text-decoration: none;
 }
 
@@ -66,3 +66,26 @@
 	border-right: 1px dotted #333;
 }
 */
+
+/* Glossary List View - re: shortcode */
+
+.glossary-list-details {
+    
+}
+
+.glossary-list-details .glossary-list {
+    
+}
+
+.glossary-list-details .glossary-list .glossary-item {
+    margin-bottom: 1em;
+}
+
+.glossary-list-details .glossary-list .glossary-item .glossary-item-title {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.glossary-list-details .glossary-list .glossary-item .glossary-item-desc {
+    
+}

@@ -81,15 +81,15 @@ class WPG_Shortcode_TERMLIST Extends WPG{
 			$link  = $title;
 			if( $linkopt != 'none' ):
 				$target = ($linkopt == 'blank') ? 'target="_blank"' : '';
-				$link   = '<a href="' . $href . '" title="' . esc_attr($title) . '" ' . $target .'>' . $title . '</a>';
+				$link   = '<div class="glossary-item-title"><a href="' . $href . '" title="' . esc_attr($title) . '" ' . $target .'>' . $title . '</a></div>';
 			endif;
 			if( $desc ):
 				$content = ($desc == 'excerpt') ? get_the_excerpt() : apply_filters('the_content', get_the_content());	
-				$content = '<span class="glossary-item-desc">' . $content . '</span>';
+				$content = '<div class="glossary-item-desc">' . $content . '</div>';
 			endif;
-			$item  = '<li class="glossary-item">';
-			$item .= $link . '<br>' . $content;
-			$item .= '</li>';
+			$item  = '<div class="glossary-item">';
+			$item .= $link . $content;
+			$item .= '</div>';
 			$alphalist[$titlealpha][] = $item;
 		endforeach; // glossaries
 		// Default to the alphabetical order in the get_post args
@@ -113,13 +113,13 @@ class WPG_Shortcode_TERMLIST Extends WPG{
 		endif;
 		$termlist = array_chunk( $termlist, $cols );
 
-		$return = '<span class="glossary-list-details">';
+		$return = '<div class="glossary-list-details">';
 		foreach( $termlist as $col => $items ):
-			$return .= '<ul class="glossary-list">';
+			$return .= '<div class="glossary-list">';
 			$return .= implode( '', $items );
-			$return .= '</ul>';
+			$return .= '</div>';
 		endforeach;
-		$return .= '</ul>';
+		$return .= '</div>';
 
 		return $return;
 	} // glossary_term_list
