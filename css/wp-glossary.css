@@ -89,3 +89,19 @@
 .glossary-list-details .glossary-list .glossary-item .glossary-item-desc {
     
 }
+
+/* Glossary Single View */
+
+.wpg-term-usage {
+    margin-top: 1em;
+}
+.wpg-term-usage .wpg-term-usage-title {
+    font-weight: bold;
+    font-size: 120%;
+}
+.wpg-term-usage ul {
+    
+}
+.wpg-term-usage ul li {
+    
+}

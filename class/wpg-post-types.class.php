@@ -156,7 +156,7 @@ class WPG_Post_types Extends WPG{
 						$title = $link;
 					if( $link )
 						$title = '<a class="glossary-reference-link" target="_blank" href="' . $link . '">' . $title . '</a>';
-					$content .= '<div class="glossary-references"><h4>' . __('Reference:', 'wp-glossary') . ' ' . $title . '</h4></div>';
+					$content .= '<div class="glossary-references"><div class="glossary-references-title">' . __('Reference:', 'wp-glossary') . ' ' . $title . '</div></div>';
 				endif;
 			endif; // $reference
 			
@@ -166,7 +166,7 @@ class WPG_Post_types Extends WPG{
 				$usage = get_post_meta( $post->ID, 'wpg_term_used' );
 				if( $usage ):
 					$usage_title = apply_filters( 'wpg_term_usage_title', __('WP Glossary Term Usage', 'wp-glossary') );
-					$content    .= '<div class="wpg-term-usage"><div class="header"><h4>' . $usage_title . '</h4></div><ul>';
+					$content    .= '<div class="wpg-term-usage"><div class="wpg-term-usage-title">' . $usage_title . '</div><ul>';
 					foreach( $usage as $post_id ):
 						$target   = get_post( $post_id );
 						$title    = get_the_title( $post_id );
