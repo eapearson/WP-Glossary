@@ -95,11 +95,18 @@ class WPG_Shortcodes Extends WPG{
 		extract( shortcode_atts( array(
 			'id'   => 0,
 			'slug' => '',
+            'term' => '',
 			'text' => '',
 		), $atts) );
 
 		// Set text to default to content. This allows syntax like: [glossary]Cheddar[/glossary]
 		if( empty($text) ) $text = $content;
+        
+        # term is a synonym for slug. Slug is not particularly friendly for 
+        # non wp-heads. 
+        if (empty($slug)) {
+            $slug = $term;
+        }
 
 		$glossary = false;
 	
