@@ -13,13 +13,13 @@ class WPG_Shortcode_Term_Usage Extends WPG {
     		if( $termusage == 'on' ) {
     			$usage = get_post_meta($post->ID, 'wpg_term_used');
     			if ($usage) {
-    				$content    = '<div class="wpg-term-usage"><ul>';
+    				$content    = '<ul  class="wpg-term-usage">';
     				foreach( $usage as $post_id ) {
     					$target   = get_post( $post_id );
     					$title    = get_the_title( $post_id );
     					$content .= '<li><a href="' . apply_filters('wpg_term_link', get_post_permalink($post_id)) . '" title="' . esc_attr($title) . '">' . $title . '</a></li>';
                     }
-    				$content .= '</ul></div>';
+    				$content .= '</ul>';
                 }
             } else {
                 $content = '';
