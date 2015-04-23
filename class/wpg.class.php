@@ -56,6 +56,8 @@ class WPG{
 		new WPG_Shortcode_ATOZ();
 		require_once( $this->base() . '/wpg-shortcode-glossary-list.class.php' );
 		new WPG_Shortcode_TERMLIST();
+        require_once($this->base() . '/wpg-shortcode-term-usage.class.php');
+        new WPG_Shortcode_Term_Usage();
 	}
 
 	private function add_widgets(){

@@ -161,6 +161,7 @@ class WPG_Post_types Extends WPG{
 			endif; // $reference
 			
 			// Usage
+            /*
 			$termusage = isset( $options['termusage'] ) ? $options['termusage'] : 'on';
 			if( $termusage == 'on' ):
 				$usage = get_post_meta( $post->ID, 'wpg_term_used' );
@@ -175,7 +176,7 @@ class WPG_Post_types Extends WPG{
 					$content .= '</ul></div>';
 				endif; // usage loop
 			endif; // usage check
-
+            */
 		endif; // Single ++ glossary
 		return $content;
 	} // the_content
