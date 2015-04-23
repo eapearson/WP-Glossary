@@ -124,6 +124,7 @@ class WPG_Admin{
 				'bootstrap' => __('Bootstrap',  'wp-glossary'),
 				'youtube'   => __('YouTube',    'wp-glossary'),
 				'tipsy'     => __('Tipsy',      'wp-glossary'),
+                'custom'    => __('Custom',     'wp-glossary')
 			),
 		));
 
